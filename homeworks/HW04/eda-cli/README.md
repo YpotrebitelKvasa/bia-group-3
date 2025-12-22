@@ -255,7 +255,7 @@ curl -X POST "http://127.0.0.1:8000/quality-from-csv" \
 
 ---
 
-## 5. `quality-flags-from-csv` - вывод фолагов качества по CSV-файлу
+## 5. `quality-flags-from-csv` - вывод флагов качества по CSV-файлу
 
 Эндпоинт принимает CSV-файл, внутри:
 
