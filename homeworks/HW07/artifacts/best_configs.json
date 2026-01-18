@@ -1,0 +1,53 @@
+{
+  "data1": {
+    "kmeans": {
+      "params": {
+        "k": 2
+      },
+      "criterion": "silhouette",
+      "selected_because": "Максимальный silhouette score (0.522) среди всех k"
+    },
+    "dbscan": {
+      "params": {
+        "eps": 2.0,
+        "min_samples": 3
+      },
+      "criterion": "silhouette",
+      "selected_because": "Максимальный silhouette score (0.522) среди всех комбинаций eps/min_samples"
+    }
+  },
+  "data2": {
+    "kmeans": {
+      "params": {
+        "k": 2
+      },
+      "criterion": "silhouette",
+      "selected_because": "Максимальный silhouette score (0.307) среди всех k"
+    },
+    "dbscan": {
+      "params": {
+        "eps": 0.5,
+        "min_samples": 10
+      },
+      "criterion": "silhouette",
+      "selected_because": "Максимальный silhouette score (0.251) среди всех комбинаций eps/min_samples"
+    }
+  },
+  "data3": {
+    "kmeans": {
+      "params": {
+        "k": 3
+      },
+      "criterion": "silhouette",
+      "selected_because": "Максимальный silhouette score (0.316) среди всех k"
+    },
+    "dbscan": {
+      "params": {
+        "eps": 0.5,
+        "min_samples": 10
+      },
+      "criterion": "silhouette",
+      "selected_because": "Максимальный silhouette score (0.142) среди всех комбинаций eps/min_samples"
+    }
+  }
+}
