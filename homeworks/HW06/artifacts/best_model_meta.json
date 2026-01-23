@@ -1,9 +1,9 @@
 {
   "best_model_label": "RandomForest",
   "test_metrics": {
-    "accuracy": 0.9253333333333333,
-    "f1": 0.8770581778265643,
-    "roc_auc": 0.9686691889695801,
+    "accuracy": 0.9346666666666666,
+    "f1": 0.8942826321467098,
+    "roc_auc": 0.97060992331522,
     "model": "RandomForest"
   },
   "search_summary": {
@@ -12,7 +12,7 @@
       "max_features": "sqrt",
       "min_samples_leaf": 1
     },
-    "best_cv_roc_auc": 0.9694573299041404
+    "best_cv_roc_auc": 0.9684465802433795
   },
-  "random_state": 4
+  "random_state": 42
 }

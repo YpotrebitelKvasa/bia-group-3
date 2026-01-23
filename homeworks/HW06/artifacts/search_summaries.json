@@ -1,19 +1,19 @@
 {
   "LogReg(scaled)": {
     "best_params": {
-      "lr__C": 1.0,
+      "lr__C": 10.0,
       "lr__penalty": "l2",
       "lr__solver": "lbfgs"
     },
-    "best_cv_roc_auc": 0.8810679316431302
+    "best_cv_roc_auc": 0.8822238806908922
   },
   "DecisionTree": {
     "best_params": {
       "ccp_alpha": 0.0,
       "max_depth": null,
-      "min_samples_leaf": 20
+      "min_samples_leaf": 1
     },
-    "best_cv_roc_auc": 0.912377848888457
+    "best_cv_roc_auc": 0.83659265269233
   },
   "RandomForest": {
     "best_params": {
@@ -21,13 +21,13 @@
       "max_features": "sqrt",
       "min_samples_leaf": 1
     },
-    "best_cv_roc_auc": 0.9694573299041404
+    "best_cv_roc_auc": 0.9684465802433795
   },
   "AdaBoost": {
     "best_params": {
-      "learning_rate": 1.0,
-      "n_estimators": 200
+      "learning_rate": 0.5,
+      "n_estimators": 50
     },
-    "best_cv_roc_auc": 0.9151667672415129
+    "best_cv_roc_auc": 0.8870150706097979
   }
 }
