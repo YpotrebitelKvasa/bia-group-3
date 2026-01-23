@@ -6,9 +6,9 @@
 ## 1. Datasets
 
 Вы выбрали 3 датасета из 4 (перечислите):
-S07-hw-dataset-01
-S07-hw-dataset-02
-S07-hw-dataset-03
+S07-hw-dataset-01.csv
+S07-hw-dataset-02.csv
+S07-hw-dataset-03.csv
 
 ### 1.1 Dataset A
 
