@@ -1,0 +1,17 @@
+{
+  "experiment_id": "E4",
+  "dataset": "EMNIST_balanced",
+  "seed": 42,
+  "model": "MLP",
+  "hidden_sizes": [
+    512,
+    256,
+    128
+  ],
+  "dropout": 0.0,
+  "use_batchnorm": true,
+  "optimizer": "Adam",
+  "lr": 0.001,
+  "best_val_acc": 0.7720833333333333,
+  "epochs_trained": 15
+}
