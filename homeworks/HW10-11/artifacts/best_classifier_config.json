@@ -1,0 +1,24 @@
+{
+  "dataset": "CIFAR100",
+  "architecture": "ResNet18-pretrained-finetune",
+  "num_classes": 100,
+  "transforms": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "resize": 224
+  },
+  "optimizer": "Adam(2-LR)",
+  "lr": "1e-4/1e-3",
+  "epochs": 3,
+  "seed": 42,
+  "best_val_accuracy": 0.7221,
+  "test_accuracy": 0.7288
+}
