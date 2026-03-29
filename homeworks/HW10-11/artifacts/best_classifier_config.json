@@ -15,10 +15,10 @@
     ],
     "resize": 224
   },
-  "optimizer": "Adam(2-LR)",
-  "lr": "1e-4/1e-3",
+  "optimizer": "Adam",
+  "lr": 0.0001,
   "epochs": 3,
   "seed": 42,
   "best_val_accuracy": 0.7221,
-  "test_accuracy": 0.7288
+  "test_accuracy": null
 }

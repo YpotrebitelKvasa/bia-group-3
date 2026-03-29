@@ -1,7 +1,7 @@
 experiment_id,task,dataset,seed,model_summary,optimizer,lr,epochs_trained,best_val_accuracy,test_accuracy,precision,recall,mean_iou,notes
-C1,classification,CIFAR100,42,SimpleCNN(32-64-128),Adam,0.001,3,0.2853,0.2863,,,,"Base CNN, no augmentations"
-C2,classification,CIFAR100,42,SimpleCNN(32-64-128),Adam,0.001,3,0.1934,0.21,,,,"Same CNN + augmentations (flip, crop, color jitter)"
-C3,classification,CIFAR100,42,ResNet18-pretrained-head-only,Adam,0.001,3,0.5658,0.5608,,,,"Pretrained ResNet18, frozen backbone, train fc only"
-C4,classification,CIFAR100,42,ResNet18-pretrained-finetune,Adam(2-LR),1e-4/1e-3,3,0.7221,0.7288,,,,"Pretrained ResNet18, fine-tune layer4+fc with different LR"
+C1,classification,CIFAR100,42,SimpleCNN(32-64-128),Adam,0.001,3,0.2853,,,,,"Base CNN, no augmentations"
+C2,classification,CIFAR100,42,SimpleCNN(32-64-128),Adam,0.001,3,0.1934,,,,,"Same CNN + augmentations (flip, crop, color jitter)"
+C3,classification,CIFAR100,42,ResNet18-pretrained-head-only,Adam,0.001,3,0.5658,,,,,"Pretrained ResNet18, frozen backbone, train fc only"
+C4,classification,CIFAR100,42,ResNet18-pretrained-finetune,Adam,0.0001,3,0.7221,0.7288,,,,"Pretrained ResNet18, fine-tune layer4+fc with different LR"
 V1,segmentation,OxfordIIITPet,42,DeepLabV3-ResNet50-COCO,,,0,,,,,0.2818760883427298,Basic postprocessing: threshold on cat/dog classes
 V2,segmentation,OxfordIIITPet,42,DeepLabV3-ResNet50-COCO,,,0,,,,,0.3259158457807683,Morphological cleanup: close+open with 3x3 kernel
