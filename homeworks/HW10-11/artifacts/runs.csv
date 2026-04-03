@@ -3,5 +3,5 @@ C1,classification,CIFAR100,42,SimpleCNN(32-64-128),Adam,0.001,3,0.2853,,,,,"Base
 C2,classification,CIFAR100,42,SimpleCNN(32-64-128),Adam,0.001,3,0.1934,,,,,"Same CNN + augmentations (flip, crop, color jitter)"
 C3,classification,CIFAR100,42,ResNet18-pretrained-head-only,Adam,0.001,3,0.5658,,,,,"Pretrained ResNet18, frozen backbone, train fc only"
 C4,classification,CIFAR100,42,ResNet18-pretrained-finetune,Adam,0.0001,3,0.7221,0.7288,,,,"Pretrained ResNet18, fine-tune layer4+fc with different LR"
-V1,segmentation,OxfordIIITPet,42,DeepLabV3-ResNet50-COCO,,,0,,,,,0.2818760883427298,Basic postprocessing: threshold on cat/dog classes
-V2,segmentation,OxfordIIITPet,42,DeepLabV3-ResNet50-COCO,,,0,,,,,0.3259158457807683,Morphological cleanup: close+open with 3x3 kernel
+V1,segmentation,OxfordIIITPet,42,DeepLabV3-ResNet50-COCO,,,0,,,,,0.2818760883427298,"Foreground: cat+dog (COCO idx=15,18). Threshold > 0 on logits"
+V2,segmentation,OxfordIIITPet,42,DeepLabV3-ResNet50-COCO,,,0,,,,,0.3259158457807683,"Foreground: cat+dog (COCO idx=15,18). Threshold > 0.7 + morphology open/close"
