@@ -88,34 +88,34 @@ pip install -r requirements.txt
 
 ### 4.1. Подготовка данных и индексов
 
-# 1. Клонировать репозиторий и перейти в папку проекта
+1. Клонировать репозиторий и перейти в папку проекта
 git clone https://github.com/YpotrebitelKvasa/bia-group-3.git
 cd bia-group-3/project
 
-# 2. Создать виртуальное окружение и активировать его
+2. Создать виртуальное окружение и активировать его
 python -m venv venv
 # Windows:
 venv\Scripts\activate
 # Linux/Mac:
 source venv/bin/activate
 
-# 3. Установить зависимости
+3. Установить зависимости
 pip install -r requirements.txt
 
-# 4. Создать файл конфигурации
+4. Создать файл конфигурации
 cp .env.example .env
-# При необходимости отредактировать .env (ключи для внешних API)
+При необходимости отредактировать .env (ключи для внешних API)
 
-# 5. Загрузить и обработать датасет (Natural Questions, validation split)
+5. Загрузить и обработать датасет (Natural Questions, validation split)
 python -m src.data.loader
 
-# 6. Построить индексы BM25 и FAISS
+6. Построить индексы BM25 и FAISS
 python -m scripts.build_indices
 
 ### 4.2. Запуск сервиса (API/веб-интерфейс)
 
-# Убедиться, что виртуальное окружение активировано
-# Запустить сервер
+Убедиться, что виртуальное окружение активировано
+Запустить сервер
 uvicorn src.api.main:app --reload --host 0.0.0.0 --port 8000
 
 
