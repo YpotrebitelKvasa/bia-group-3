@@ -44,13 +44,13 @@ def main():
         return
     
     # Загрузка чанков
-    logger.info(f"📥 Загрузка чанков из {chunks_path}...")
+    logger.info(f"Загрузка чанков из {chunks_path}...")
     start_load = time.time()
     chunks = load_chunks(str(chunks_path))
-    logger.info(f"✅ Загружено {len(chunks)} чанков за {time.time() - start_load:.1f}с")
+    logger.info(f"Загружено {len(chunks)} чанков за {time.time() - start_load:.1f}с")
     
     # === BM25 индекс ===
-    logger.info("🔨 Построение BM25 индекса...")
+    logger.info("Построение BM25 индекса...")
     start_bm25 = time.time()
     
     bm25 = BM25Retriever(k1=1.5, b=0.75)
@@ -58,11 +58,11 @@ def main():
     bm25_path = indices_dir / "bm25"
     bm25.save(str(bm25_path))
     
-    logger.info(f"✅ BM25 индекс сохранён: {bm25_path}.pkl")
-    logger.info(f"   Время: {time.time() - start_bm25:.1f}с")
+    logger.info(f"BM25 индекс сохранён: {bm25_path}.pkl")
+    logger.info(f"Время: {time.time() - start_bm25:.1f}с")
     
     # === FAISS индекс ===
-    logger.info("🔨 Построение FAISS индекса (это займёт 2-5 минут)...")
+    logger.info("Построение FAISS индекса (это займёт 2-5 минут)...")
     start_faiss = time.time()
     
     dense = DenseRetriever(index_type="FlatIP")  # косинусное сходство
@@ -70,16 +70,16 @@ def main():
     faiss_path = indices_dir / "faiss"
     dense.save(str(faiss_path))
     
-    logger.info(f"✅ FAISS индекс сохранён: {faiss_path}.faiss + .meta.json")
-    logger.info(f"   Время: {time.time() - start_faiss:.1f}с")
+    logger.info(f"FAISS индекс сохранён: {faiss_path}.faiss + .meta.json")
+    logger.info(f"Время: {time.time() - start_faiss:.1f}с")
     
     # === Итог ===
     total_time = time.time() - start_load
-    logger.info(f"🎉 Готово! Все индексы в {indices_dir}/")
-    logger.info(f"   Общее время: {total_time:.1f}с")
+    logger.info(f"Готово! Все индексы в {indices_dir}/")
+    logger.info(f" Общее время: {total_time:.1f}с")
     
     # Информация для отчёта
-    logger.info("\n📊 Статистика для report.md:")
+    logger.info("\nСтатистика для report.md:")
     logger.info(f"   - Чанков: {len(chunks)}")
     logger.info(f"   - Размер BM25: {bm25_path.with_suffix('.pkl').stat().st_size / 1024 / 1024:.1f} MB")
     logger.info(f"   - Размер FAISS: {faiss_path.with_suffix('.faiss').stat().st_size / 1024 / 1024:.1f} MB")
