@@ -6,7 +6,7 @@ data/raw/
 data/indices/
 # Исключение: разрешаем папку processed и конкретные файлы
 !data/processed/
-!data/processed/chunks.jsonl
+data/processed/chunks.jsonl
 # !data/processed/metadata.parquet  <-- Если появится, раскомментируй
 
 # ==========================================
