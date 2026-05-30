@@ -1,0 +1,53 @@
+dataset:
+  name: "natural_questions"
+  split: "dev[:5000]"
+  cache_dir: "./data/raw"
+  answer_field: "short_answers"
+
+preprocessing:
+  max_chunk_tokens: 300
+  min_chunk_chars: 50
+  remove_boilerplate: true
+  chunk_overlap: 20
+
+retrieval:
+  bm25:
+    enabled: true
+    k1: 1.5
+    b: 0.75
+  dense:
+    model: "all-MiniLM-L6-v2"
+    index_path: "./data/indices/faiss.index"
+    normalize_embeddings: true
+    batch_size: 64
+  hybrid:
+    enabled: true
+    alpha: 0.7
+    normalize_scores: "minmax"
+  top_k: 5
+
+generation:
+  provider: "ollama"
+  model: "qwen2.5:1.5b"
+  endpoint: "${LLM_ENDPOINT:-http://localhost:11434}"
+  max_tokens: 256
+  temperature: 0.1
+  prompt_template: |
+    На основе следующей информации ответь на вопрос кратко и точно.
+    
+    Контекст:
+    {context}
+    
+    Вопрос: {question}
+    
+    Ответ:
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  log_level: "${LOG_LEVEL:-info}"
+  docs_url: "/docs"
+
+metrics:
+  evaluate_batch_size: 32
+  recall_ks: [1, 3, 5, 10]

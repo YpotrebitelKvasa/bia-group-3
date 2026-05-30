@@ -1,0 +1,25 @@
+# Data & NLP
+datasets>=2.18.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+nltk>=3.8.1
+rank-bm25>=0.2.2
+
+# Embeddings & Retrieval
+sentence-transformers>=2.7.0
+faiss-cpu>=1.7.4
+
+# API & Serving
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.6.0
+pydantic-settings>=2.1.0
+python-dotenv>=1.0.0
+
+# Testing
+pytest>=8.0.0
+httpx>=0.27.0
+
+# Utils
+tqdm>=4.66.0
+pyyaml>=6.0.1

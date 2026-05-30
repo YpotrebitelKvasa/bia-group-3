@@ -1,0 +1,92 @@
+# ==========================================
+# DATA
+# ==========================================
+# Игнорируем сырые данные и индексы (они тяжёлые и генерируются скриптами)
+data/raw/
+data/indices/
+# Исключение: разрешаем папку processed и конкретные файлы
+!data/processed/
+!data/processed/chunks.jsonl
+# !data/processed/metadata.parquet  <-- Если появится, раскомментируй
+
+# ==========================================
+# ARTIFACTS & EXPERIMENTS
+# ==========================================
+# В artifacts сохраняем только лёгкие отчёты и графики
+artifacts/
+!artifacts/*.png
+!artifacts/*.md
+!artifacts/*.json
+# Игнорируем тяжёлые модели в артефактах
+artifacts/*.pt
+artifacts/*.bin
+artifacts/*.onnx
+artifacts/*.h5
+
+# Эксперименты (JSON логи оставляем, модели игнорируем)
+experiments/
+!experiments/*.json
+experiments/*.pt
+experiments/*.bin
+
+# ==========================================
+# CONFIGS & SECRETS
+# ==========================================
+.env
+.env.local
+*.secret
+*.key
+configs/*.local.yaml
+
+# ==========================================
+# PYTHON / BUILD
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==========================================
+# JUPYTER / IDE
+# ==========================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ==========================================
+# ENVIRONMENTS
+# ==========================================
+venv/
+.venv/
+.envrc
+env/
+
+# ==========================================
+# LOGS / CACHE
+# ==========================================
+logs/
+*.log
+.mlflow/
+wandb/
+*.cache/
+.huggingface/
